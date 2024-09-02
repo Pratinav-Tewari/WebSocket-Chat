@@ -21,8 +21,21 @@ function sendMessage() {
         dateTime: new Date()
     }
     socket.emit('message', data)
+    addMessage(true, data)
+    input.value = ''
 }
 
 socket.on('chat-message', (data) => {
-    console.log(data)
+    addMessage(false, data)
 })
+
+function addMessage(isOwnMessage, data){
+    const element = `<l1 class="${isOwnMessage ? "message-right" : "message-left"}">
+    <p class="message">
+        ${data.message}
+        <span>${moment(data.dateTime).fromNow()}</span>
+    </p>
+</l1>`
+
+message.innerHTML += element
+}
