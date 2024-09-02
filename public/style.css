@@ -153,7 +153,9 @@ body {
 }
 
 .clients-total {
-    margin: 20px 0;
+    margin: 10px 0;
     color: #aaaaaa;
+    padding: 1px;
+    text-align: center;
 }
 }
