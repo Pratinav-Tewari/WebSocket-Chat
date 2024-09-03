@@ -1,40 +1,42 @@
 const socket = io()
 
-const clientsTotal = document.getElementById('clients-total')
+const clientsTotal = document.getElementById('user-base')
 
-const messageContainer = document.getElementById('message-container')
-const nameInput = document.getElementById('name-input')
-const messageForm = document.getElementById('message-form')
-const messageInput = document.getElementById('message-input')
+const Container = document.getElementById('message-container')
+const namIn = document.getElementById('name-input')
+const Form = document.getElementById('message-form')
+const msgIn = document.getElementById('message-input')
 
-messageForm.addEventListener('submit', (e) => {
+const Tone = new Audio('/notification-tone.mp3')
+
+Form.addEventListener('submit', (e) => {
   e.preventDefault()
-  sendMessage()
+  send()
 })
 
-socket.on('clients-total', (data) => {
+socket.on('user-base', (data) => {
   clientsTotal.innerText = `User Base: ${data}`
 })
 
-function sendMessage() {
-  if (messageInput.value === '') return
-  // console.log(messageInput.value)
+function send() {
+  if (msgIn.value === '') return
   const data = {
-    name: nameInput.value,
-    message: messageInput.value,
+    name: namIn.value,
+    message: msgIn.value,
     dateTime: new Date(),
   }
   socket.emit('message', data)
   addMessage(true, data)
-  messageInput.value = ''
+  msgIn.value = ''
 }
 
 socket.on('chat-message', (data) => {
-  // console.log(data)
+  Tone.play()
   addMessage(false, data)
 })
 
 function addMessage(isOwnMessage, data) {
+  clearF()
   const element = `
       <li class="${isOwnMessage ? 'message-right' : 'message-left'}">
           <p class="message">
@@ -44,10 +46,43 @@ function addMessage(isOwnMessage, data) {
         </li>
         `
 
-  messageContainer.innerHTML += element
+  Container.innerHTML += element
   scrollToBottom()
 }
 
 function scrollToBottom() {
-    messageContainer.scrollTo(0, messageContainer.scrollHeight)
-  }
+  Container.scrollTo(0, Container.scrollHeight)
+}
+
+msgIn.addEventListener('focus', (e) => {
+  socket.emit('feedback', {
+    feedback: `${namIn.value} is typing a message`,
+  })
+})
+
+msgIn.addEventListener('keypress', (e) => {
+  socket.emit('feedback', {
+    feedback: `${namIn.value} is typing a message`,
+  })
+})
+msgIn.addEventListener('blur', (e) => {
+  socket.emit('feedback', {
+    feedback: '',
+  })
+})
+
+socket.on('feedback', (data) => {
+  clearF()
+  const element = `
+        <li class="message-feedback">
+          <p class="feedback" id="feedback">${data.feedback}</p>
+        </li>
+  `
+  Container.innerHTML += element
+})
+
+function clearF() {
+  document.querySelectorAll('li.message-feedback').forEach((element) => {
+    element.parentNode.removeChild(element)
+  })
+}
