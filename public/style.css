@@ -24,6 +24,8 @@ body {
     width: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     background-color: #222222;
+}
+
 .name {
     display: flex;
     align-items: center;
@@ -158,4 +160,21 @@ body {
     padding: 1px;
     text-align: center;
 }
+
+.clear-history {
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    padding: 0 20px;
+    margin: 13px 0;
+    border-radius: 20px;
+    background-color: #ff1e00e9; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-history:hover{
+    background-color: #ff1e00b3;
+
 }
