@@ -204,6 +204,16 @@ body {
         padding: 10px;
     }
 
+    .name {
+        justify-content: center;
+    }
+
+    .name > span {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+    }
+
     .name-input {
         width: 100%;
         margin: 0;
@@ -223,4 +233,24 @@ body {
     .message-container {
         height: 300px;
     }
+
+    .message-form {
+        flex-direction: row;
+    }
+
+    .message-input {
+        width: auto;
+        flex-grow: 1;
+        margin: 0;
+    }
+
+    .send-button {
+        width: auto;
+        margin-left: 10px;
+    }
+
+    .v-divider {
+        display: none;
+    }
 }
+

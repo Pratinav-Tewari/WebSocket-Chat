@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose(); 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => console.log(`Chat server on port ${PORT}`));
 const io = require('socket.io')(server);
 const db = new sqlite3.Database('./chat.db');  
