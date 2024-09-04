@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a real-time chat application built using Node.js, Express, Socket.io, and SQLite. The app allows multiple users to communicate in real-time through WebSockets. All chats are stored in a SQLite3 database which can easily be cleared by the user whenever they desire. The front end is designed with HTML5, CSS3, and JavaScript, ensuring a responsive and user-friendly interface. It also includes basic user authentication to enhance security.
+This is a real-time chat application built using Node.js, Express, Socket.io, and SQLite. The app allows multiple users to communicate in real-time through WebSockets. All chats are stored in a SQLite3 database which can easily be cleared by the user whenever they desire. The front end is designed with HTML5, CSS3, and JavaScript, ensuring a responsive and user-friendly interface.
 
 ## Features
 
@@ -10,7 +10,6 @@ This is a real-time chat application built using Node.js, Express, Socket.io, an
 - **Message History**: Chat history is stored in an SQLite database and retrieved when a user connects.
 - **Typing Notifications**: Users can see when others are typing hence inducing responsive feedback.
 - **Responsive Design**: The interface is designed to be accessible and usable on various devices.
-- **User Authentication**: Basic user authentication using sessions and password hashing.
 
 ## Technologies Used
 
