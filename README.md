@@ -71,4 +71,4 @@ Open your browser and navigate to:
 
 ## Deployment
 
-Glitch - [https://pvt-websocket-chat.glitch.me/](Open_In_Two_Tabs)
+Glitch - [Open In Two Tabs](https://pvt-websocket-chat.glitch.me/)
