@@ -43,7 +43,7 @@ function addMessage(isOwnMessage, data) {
           </p>
         </li>
         `;
-
+        
     Container.innerHTML += element;
     scrollToBottom();
 }
