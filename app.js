@@ -5,12 +5,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const server = app.listen(PORT, () => console.log(`Chat server on port ${PORT}`));
 const io = require('socket.io')(server);
+const db = new sqlite3.Database('./chat.db');  
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 let usersConnected = new Set();
-
-const db = new sqlite3.Database('./chat.db');  
 
 db.serialize(() => {
     db.run("CREATE TABLE IF NOT EXISTS chat (id INTEGER PRIMARY KEY AUTOINCREMENT, user TEXT, message TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)");
@@ -38,6 +37,7 @@ function connection(socket) {
     });
 
     socket.on('message', (data) => {
+        if (data.message.trim() === ' '){return;}
         const stmt = db.prepare("INSERT INTO chat (user, message) VALUES (?, ?)");
         stmt.run(data.name, data.message, function(err) {
             if (err) {

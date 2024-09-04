@@ -17,7 +17,7 @@ socket.on('user-base', (data) => {
 });
 
 function send() {
-    if (msgIn.value === '') return;
+    if (msgIn.value.trim() === '') {return;};
     const data = {
         name: namIn.value,
         message: msgIn.value,
