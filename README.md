@@ -71,4 +71,4 @@ Open your browser and navigate to:
 
 ## Deployment
 
-Vercel - 
+Glitch - [https://pvt-websocket-chat.glitch.me/](Open_In_Two_Tabs)
