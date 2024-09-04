@@ -114,3 +114,38 @@ clearH.addEventListener('click', () => {
 socket.on('clear-history', () => {
   document.getElementById('message-container').innerHTML = ''; 
 });
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from server');
+  const element = `
+    <li class="message-feedback">
+      <p class="feedback" id="feedback">Connection lost. Reconnecting...</p>
+    </li>
+  `;
+  Container.innerHTML += element;
+});
+
+socket.on('reconnect', () => {
+  console.log('Reconnected to server');
+  clearF();
+  socket.emit('reconnected');
+});
+
+socket.on('pong', () => {
+  console.log('Pong received from server');
+  setTimeout(() => {
+    if (!socket.connected) {
+      console.log('Connection lost');
+      const element = `
+        <li class="message-feedback">
+          <p class="feedback" id="feedback">Connection lost. Reconnecting...</p>
+        </li>
+      `;
+      Container.innerHTML += element;
+    }
+  }, 5000);
+});
+
+setInterval(() => {
+  socket.emit('ping');
+}, 5000);

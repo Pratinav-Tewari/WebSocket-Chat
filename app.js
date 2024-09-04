@@ -34,7 +34,20 @@ function connection(socket) {
         console.log('Socket disconnected', socket.id);
         usersConnected.delete(socket.id);
         io.emit('user-base', usersConnected.size);
-    });
+        socket.broadcast.emit('user-disconnected', socket.id);
+      });
+    
+      socket.on('reconnect', () => {
+        console.log('Socket reconnected', socket.id);
+        usersConnected.add(socket.id);
+        io.emit('user-base', usersConnected.size);
+        socket.emit('reconnected');
+      });
+    
+      socket.on('ping', () => {
+        //console.log('Ping received from client');
+        socket.emit('pong');
+      });
 
     socket.on('message', (data) => {
         if (data.message.trim() === ' '){return;}
