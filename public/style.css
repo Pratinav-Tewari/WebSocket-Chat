@@ -191,6 +191,120 @@ body {
 .clear-history:hover {
     background-color: #ff1e00b3;
 }
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    border: none;
+}
+
+.register-form {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-group > span {
+    color: #888888;
+    margin-right: 10px;
+}
+
+.input-field {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.login-form {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-group > span {
+    color: #888888;
+    margin-right: 10px;
+}
+
+.input-field {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
 
 @media (max-width: 480px) {
     .main {
@@ -251,6 +365,24 @@ body {
 
     .v-divider {
         display: none;
+    }
+
+    .login-container{
+        flex-direction: column;
+    }
+
+    .register-container{
+        flex-direction: column;
+    }
+
+    .login-form {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .register-form {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
