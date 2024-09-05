@@ -306,6 +306,23 @@ body {
     background-color: #0056b3;
 }
 
+.login-reg {
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    padding: 0 15px;
+    margin: 13px 0;
+    border-radius: 20px;
+    background-color: #222222;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-reg:hover {
+    background-color: #ff73001d;
+}
+
 @media (max-width: 480px) {
     .main {
         width: 100%;
