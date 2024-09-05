@@ -17,7 +17,7 @@ socket.on('user-base', (data) => {
 });
 
 function send() {
-    if (msgIn.value.trim() === '') {return;};
+    if (msgIn.value.trim() === '') { return; }
     const data = {
         name: namIn.value,
         message: msgIn.value,
@@ -52,19 +52,19 @@ function scrollToBottom() {
     Container.scrollTo(0, Container.scrollHeight);
 }
 
-msgIn.addEventListener('focus', (e) => {
+msgIn.addEventListener('focus', () => {
     socket.emit('feedback', {
         feedback: `${namIn.value} is typing a message`,
     });
 });
 
-msgIn.addEventListener('keypress', (e) => {
+msgIn.addEventListener('keypress', () => {
     socket.emit('feedback', {
         feedback: `${namIn.value} is typing a message`,
     });
 });
 
-msgIn.addEventListener('blur', (e) => {
+msgIn.addEventListener('blur', () => {
     socket.emit('feedback', {
         feedback: '',
     });
@@ -98,21 +98,34 @@ socket.on('chat-history', (history) => {
 });
 
 clearH.addEventListener('click', () => {
-  fetch('/clear-history', { method: 'POST' })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        console.log('Chat history cleared');
-      } 
-      else {
-        console.error('Failed in clearing chat history');
-      }
-    })
-    .catch(error => console.error('Error:', error));
-});
+  const user = namIn.value.trim();
+  
+  if (user === '') {
+      console.error("User name blank.");
+      alert("Enter username.");
+      return;
+  }
 
-socket.on('clear-history', () => {
-  document.getElementById('message-container').innerHTML = ''; 
+  fetch('/clear-history', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user: user })
+  })
+  .then(res => res.json())
+  .then(response => {
+      if (response.success) {
+          console.log("Chat cleared.");
+          Container.innerHTML = '';
+          alert(response.message);
+      } else {
+          console.error(response.message);
+          alert(`Error: ${response.message}`);
+      }
+  })
+  .catch(err => {
+      console.error("Error clearing chat history:", err);
+      alert("Error : unable to clear chat history.");
+  });
 });
 
 socket.on('disconnect', () => {
