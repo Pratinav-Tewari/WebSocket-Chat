@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Register - Chat App</title>
+  </head>
+  <body>
+    <div class="register-container">
+      <h1 class="title">Register for ChatApp</h1>
+      <form class="register-form" id="register-form">
+        <div class="input-group">
+          <span><i class="fas fa-user"></i></span>
+          <input
+            type="text"
+            id="reg-username"
+            class="input-field"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <span><i class="fas fa-envelope"></i></span>
+          <input
+            type="email"
+            id="reg-email"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <span><i class="fas fa-lock"></i></span>
+          <input
+            type="password"
+            id="reg-password"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <span><i class="fas fa-lock"></i></span>
+          <input
+            type="password"
+            id="reg-confirm-password"
+            class="input-field"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+        <button type="submit" class="register-button">Register</button>
+      </form>
+    </div>
+  </body>
+</html>
