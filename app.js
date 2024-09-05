@@ -16,6 +16,12 @@ db.serialize(() => {
     db.run("CREATE TABLE IF NOT EXISTS chat (id INTEGER PRIMARY KEY AUTOINCREMENT, user TEXT, message TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)");
 });
 
+db.run("DELETE FROM chat WHERE id NOT IN (SELECT id FROM chat ORDER BY timestamp DESC LIMIT 100)", function(err) {
+  if (err) {
+      console.error("Error deleting old messages:", err.message);
+  }
+});
+
 io.on('connection', connection);
 
 function connection(socket) {
