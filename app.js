@@ -69,8 +69,10 @@ function connection(socket) {
     });
 
     socket.on('feedback', (data) => {
-        socket.broadcast.emit('feedback', data);
-    });
+      if (data.feedback && typeof data.feedback === 'string' && data.feedback.length > 0) {
+          socket.broadcast.emit('feedback', data);  
+      }
+  });
 }
 
 app.post('/clear-history', (req, res) => {

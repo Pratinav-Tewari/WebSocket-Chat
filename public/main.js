@@ -52,6 +52,30 @@ function scrollToBottom() {
     Container.scrollTo(0, Container.scrollHeight);
 }
 
+let typeTime;  
+
+msgIn.addEventListener('keypress', () => {
+    clearTimeout(typeTime);
+
+    if (namIn.value.trim() === '') { 
+        return;
+    }
+
+    if (!socket.typing) {
+        socket.typing = true; 
+        socket.emit('feedback', {
+            feedback: `${namIn.value} is typing a message`,
+        });
+    }
+
+    typeTime = setTimeout(() => {
+        socket.typing = false;  
+        socket.emit('feedback', {
+            feedback: '',  
+        });
+    }, 1000);
+});
+
 msgIn.addEventListener('focus', () => {
     socket.emit('feedback', {
         feedback: `${namIn.value} is typing a message`,
