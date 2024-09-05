@@ -366,5 +366,22 @@ body {
     .v-divider {
         display: none;
     }
-}
 
+    .login-container{
+        flex-direction: column;
+    }
+
+    .register-container{
+        flex-direction: column;
+    }
+
+    .login-form {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .register-form {
+        width: 100%;
+        max-width: 300px;
+    }
+}
