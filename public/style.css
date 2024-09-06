@@ -34,6 +34,116 @@ body {
     padding: 10px;
 }
 
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 80%;
+    padding: 15px;
+    cursor: pointer;
+    color: #222222;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.home-button i {
+    font-size: 64px;
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.chat-icon {
+    font-size: 128px;
+    color: #222222;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+    color: #ffffff;;
+}
+
+.button-box {
+    border: 2px solid #444444;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #222222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.land-but {
+    font-size: 22px;
+    height: 50px;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.land-but i {
+    margin-right: 8px;
+}
+
+.land-but:hover {
+    background-color: #0056b3;
+}
+
+.anon-chat-button {
+    font-size: 18px;
+    height: 45px;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #222222;
+    color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.anon-chat-button:hover {
+    background-color: #333333;
+}
+
 .name {
     display: flex;
     align-items: center;
@@ -329,6 +439,17 @@ body {
         max-width: none;
     }
 
+    .home-button {
+        top: 10px;
+        right: 10px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .home-button i {
+        font-size: 36px;
+    }
+
     .name,
     .message-form {
         flex-direction: column;
@@ -400,5 +521,21 @@ body {
     .register-form {
         width: 100%;
         max-width: 300px;
+    }
+
+    .home-title {
+        font-size: 28px;
+    }
+
+    .chat-icon {
+        font-size: 96px;
+    }
+
+    .land-but {
+        font-size: 18px;
+    }
+
+    .anon-chat-button {
+        font-size: 16px;
     }
 }

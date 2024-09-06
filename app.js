@@ -10,6 +10,10 @@ const db = new sqlite3.Database('./chat.db');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); 
 
+app.get('/chat', (req,res) => {
+  res.sendFile(path.join(__dirname, 'public/chat.html'));
+})
+
 app.get('/register', (req,res) => {
   res.sendFile(path.join(__dirname, 'public/register.html'));
 })

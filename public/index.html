@@ -1,77 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Chat App</title>
-  </head>
-  <body>
-    <h1 class="title">Basic ChatApp</h1>
-    <div class="main">
-      <div class="name">
-        <span><i class="far fa-user"></i></span>
-        <input
-          type="text"
-          id="name-input"
-          class="name-input"
-          value="User"
-          maxlength="20"
-        />
-      </div>
-
-      <ul class="message-container" id="message-container">
-        <!-- for reference for main.js -->
-        <!-- <li class="message-left">
-          <p class="message">
-            message on the left
-            <span>user ● 26 July 10:40</span>
-          </p>
-        </li>
-
-        <li class="message-right">
-          <p class="message">
-            message on the right
-            <span>user ● 26 July 10:40</span>
-          </p>
-        </li>
-
-        <li class="message-feedback">
-          <p class="feedback" id="feedback">user is typing a message...</p>
-        </li> -->
-      </ul>
-
-      <form class="message-form" id="message-form">
-        <input
-          type="text"
-          name="message"
-          id="message-input"
-          class="message-input"
-        />
-        <div class="v-divider"></div>
-        <button type="submit" class="send-button">
-          send <span><i class="fas fa-paper-plane"></i></span>
-        </button>
-      </form>
+    <title>pvt Chat</title>
+</head>
+<body>
+    <div class="landing-container">
+        <a href="index.html" class="chat-icon">
+            <i class="fas fa-user-secret chat-icon"></i>
+          </a>
+        <h1 class="home-title">pvt ChatRoom.</h1>
+        <div class="button-box">
+            <div class="button-section">
+                <button onclick="location.href='login.html'" type="button" class="land-but"><i class="fas fa-sign-in-alt"></i> Login </button>
+                <button onclick="location.href='register.html'" type="button" class="land-but"><i class="fas fa-user-plus"></i> Register </button>
+            </div>
+            <button onclick="location.href='chat.html'" type="button" class="anon-chat-button">   anonChat </button>
+        </div>
     </div>
-    <h3 class="user-base" id="user-base">User Base: 2</h3>
-
-    <button type="submit" class="clear-history" id="clear-history">
-        Clear Chat
-    </button>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
-      integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
-      crossorigin="anonymous"
-    ></script>
-    <script src="main.js"></script>
-  </body>
+</body>
 </html>
