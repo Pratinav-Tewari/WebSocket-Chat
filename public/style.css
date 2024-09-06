@@ -289,20 +289,20 @@ body {
 }
 
 .clear-history {
-    height: 50px;
+    height: 35px;
     font-size: 20px;
     border: none;
-    padding: 0 20px;
+    padding: 0 15px;
     margin: 13px 0;
     border-radius: 20px;
-    background-color: #ff1e00e9;
+    background-color: #0adf384f;
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .clear-history:hover {
-    background-color: #ff1e00b3;
+    background-color: #520808;
 }
 .register-container {
     display: flex;
