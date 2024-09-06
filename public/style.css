@@ -39,12 +39,12 @@ body {
 .home-button {
     position: absolute;
     top: 20px;
-    right: 20px;
+    left: 20px;
     border: none;
     border-radius: 80%;
     padding: 15px;
     cursor: pointer;
-    color: #222222;
+    color: #ffffff;
     font-size: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     z-index: 1000;
@@ -52,10 +52,33 @@ body {
 
 .home-button:hover {
     transform: scale(1.1);
-    color: #ffffff;
+    color: #222222 ;
 }
 
 .home-button i {
+    font-size: 64px;
+}
+
+.chat-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 80%;
+    padding: 15px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-button:hover {
+    transform: scale(1.1);
+    color: #222222;
+}
+
+.chat-button i {
     font-size: 64px;
 }
 
@@ -135,7 +158,7 @@ body {
     border: none;
     padding: 10px;
     border-radius: 12px;
-    background-color: #222222;
+    background-color: #333333;
     color: #ffffff;
     cursor: pointer;
     width: 100%;
@@ -143,7 +166,7 @@ body {
 }
 
 .anon-chat-button:hover {
-    background-color: #333333;
+    background-color: #333222;
 }
 
 .name {
@@ -295,14 +318,14 @@ body {
     padding: 0 15px;
     margin: 13px 0;
     border-radius: 20px;
-    background-color: #0adf384f;
+    background-color: #520808;
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .clear-history:hover {
-    background-color: #520808;
+    background-color: #333222;
 }
 .register-container {
     display: flex;
@@ -444,12 +467,23 @@ body {
 
     .home-button {
         top: 10px;
-        right: 10px;
+        left: 10px;
         padding: 12px;
         font-size: 16px;
     }
 
     .home-button i {
+        font-size: 36px;
+    }
+
+    .chat-button {
+        top: 10px;
+        right: 10px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .chat-button i {
         font-size: 36px;
     }
 
